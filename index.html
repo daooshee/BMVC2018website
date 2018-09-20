@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=960">
+<title>FG 2018 FOR-LQ workshop GLADNet</title>
+<link rel="stylesheet" type="text/css" href="css/site.20180920212709.css">
+<!--[if lte IE 7]>
+<link rel="stylesheet" type="text/css" href="css/site.20180920212709-lteIE7.css">
+<![endif]-->
+</head>
+<body id="body">
+<div class="pos vis section">
+<div class="vis-2 pos-2 size cont">
+<p class="para"><span class="font">Deep Retinex Decomposition for Low-Light Enhancement</span></p>
+</div>
+<div class="vis-2 pos-3 size-2 cont-2">
+<div class="vis-2 pos-4 size-3 cont-3">
+<p class="para-2"><span class="font-2"><a href="https://weichen582.github.io">Chen Wei *</a></span></p>
+</div>
+<div class="vis-2 pos-5 size-3 cont-4">
+<p class="para-2"><span class="font-2"><a href="https://daooshee.github.io/website/">Wenjing Wang *</a></span></p>
+</div>
+<div class="vis-2 pos-6 size-3 cont-5">
+<p class="para-2"><span class="font-2"><a href="http://www.icst.pku.edu.cn/struct/people/whyang.html">Wenhan Yang</a></span></p>
+</div>
+<div class="vis-2 pos-7 size-3 cont-6">
+<p class="para-2"><span class="font-2"><a href="http://www.icst.pku.edu.cn/struct/people/liujiaying.html">Jiaying Liu</a></span></p>
+</div>
+</div>
+<div class="vis-2 pos-8 size-4 cont-7">
+<p class="para-2"><span class="font-3">BMVC Oral Presentation, 2018</span><span class="font-3"> | </span><span class="font-4"><a href="https://arxiv.org/abs/1808.04560">arXiv</a></span></p>
+<p class="para-2"><span class="font-4"><a target="_blank" href="http://www.icst.pku.edu.cn/F/course/icb/Pub%20Files/2018/chen_bmvc18.pdf">Paper</a></span><span class="font-3"> | </span><span class="font-4"><a href="http://www.icst.pku.edu.cn/F/course/icb/Pub%20Files/2018/chen_bmvc18_sup.pdf">Supplementary</a></span><span class="font-3"> | </span><span class="font-4"><a href="http://www.icst.pku.edu.cn/struct/Seminar/Talk_BMVC18_Chenwei/index.html">PPT</a></span><span class="font-3"> | </span><span class="font-4"><a href="http://www.icst.pku.edu.cn/F/course/icb/Projects/Chen_BMVC18Poster.pdf">Poster</a></span></p>
+<p class="para-3"><span class="font-5">* indicates equal contributions.</span></p>
+</div>
+<div class="vis-2 pos-9 size-5 cont-2">
+<div class="vis-2 pos-4 size-5 colwrapper">
+<div class="vis-2 pos-4 size-6 cont-8">
+<picture class="img-2">
+<source srcset="images/zhan-tie-tu-xiang-740.png 1x, images/zhan-tie-tu-xiang-1480.png 2x">
+<img src="images/zhan-tie-tu-xiang-740.png" alt="" class="js img">
+</picture>
+</div>
+<div class="vis-2 pos-10 size-7 cont-9">
+<p class="para-4"><span class="font-3">Figure 1: The proposed framework for Retinex-Net. The enhancement process is divided into three steps: decomposition, adjustment and reconstruction. In the decomposition step, a subnetwork Decom-Net decomposes the input image into reflectance and illumination. In the following adjustment step, an encoder-decoder based Enhance-Net brightens up the illumination. Multi-scale concatenation is introduced to adjust the illumination from multi-scale perspectives. Noise on the reflectance is also removed at this step. Finally, we reconstruct the adjusted illumination and reflectance to get the enhanced result.</span></p>
+</div>
+</div>
+</div>
+<div class="vis-2 pos-11 size-8 cont">
+<p class="para-5"><span class="font-6">Abstract</span></p>
+<p class="para-4"><span class="font-3">Retinex model is an effective tool for low-light image enhancement. It assumes that observed images can be decomposed into the reflectance and illumination. Most existing Retinex-based methods have carefully designed hand-crafted constraints and parameters for this highly ill-posed decomposition, which may be limited by model capacity when applied in various scenes. In this paper, we collect a LOw-Light dataset (LOL) containing low/normal-light image pairs and propose a deep Retinex-Net learned on this dataset, including a Decom-Net for decomposition and an Enhance-Net for illumination adjustment. In the training process for Decom-Net, there is no ground truth of decomposed reflectance and illumination. The network is learned with only key constraints including the consistent reflectance shared by paired low/normal-light images, and the smoothness of illumination. Based on the decomposition, subsequent lightness enhancement is conducted on illumination by an enhancement network called Enhance-Net, and for joint denoising there is a denoising operation on reflectance. The Retinex-Net is end-to-end trainable, so that the learned decomposition is by nature good for lightness adjustment. Extensive experiments demonstrate that our method not only achieves visually pleas- ing quality for low-light enhancement but also provides a good representation of image decomposition.</span></p>
+<p class="para-4"><span class="font-3">&nbsp;</span></p>
+<p class="para-5"><span class="font-6">Subjective Results</span><span class="font-3">&nbsp;</span></p>
+<p class="para-4"><span class="font-3">We compare our Retinex-Net with four state-of-the-art methods, including de-hazing based method (DeHz) [1], naturalness preserved enhancement algorithm (NPE) [2], simultaneous reflectance and illumination estimation algorithm (SRIE) [3], and illumination map estimation based (LIME) [4]. Fig. 2 shows visual comparison on three natural images.</span></p>
+</div>
+<div class="vis-2 pos-12 size-9 cont">
+<picture class="img-4">
+<source srcset="images/zhan-tie-tu-xiang-660.png 1x, images/zhan-tie-tu-xiang-1320.png 2x">
+<img src="images/zhan-tie-tu-xiang-660.png" alt="" class="js-2 img-3">
+</picture>
+</div>
+<div class="vis-2 pos-13 size-10 cont">
+<p class="para-4"><span class="font-3">Figure 2: The results using different methods on natural images: (top-to-bottom) Street from LIME dataset [4], Still lives from LIME dataset, and Room from MEF dataset [5].</span></p>
+</div>
+<div class="vis-2 pos-14 size-11 cont">
+<p class="para-4"><span class="font-3">We compare our joint-denoising Retinex-Net with two methods, one is LIME with denoising post-processing, the other is JED [6], a recent joint low-light enhancement and denoising method. Fig. 3 shows visual comparison on three natural images.</span></p>
+</div>
+<div class="vis-2 pos-15 size-12 cont">
+<picture class="img-6">
+<source srcset="images/denoise-evaluation-original-661.jpg 1x, images/denoise-evaluation-original-1322.jpg 2x">
+<img src="images/denoise-evaluation-original-661.jpg" alt="" class="js-3 img-5">
+</picture>
+</div>
+<div class="vis-2 pos-16 size-13 cont-2">
+<div class="vis-2 pos-4 size-13 colwrapper">
+<div class="vis-2 pos-17 size-10 cont-10">
+<p class="para-4"><span class="font-3">Figure 3: The joint denoising results using different methods on Wardrobe in LOL Dataset.</span></p>
+</div>
+<div class="vis-2 pos-18 size-11 cont-11">
+<p class="para-4"><span class="font-3">In Fig. 4 we illustrate a low/normal-light image pairs in the evaluation set of our LOL dataset, as well as the reflectance and illumination map decomposed by Decom-Net and LIME.</span></p>
+</div>
+</div>
+</div>
+<div class="vis-2 pos-19 size-14 cont">
+<picture class="img-8">
+<source srcset="images/decomposition-664.jpg 1x, images/decomposition-1328.jpg 2x">
+<img src="images/decomposition-664.jpg" alt="" class="js-4 img-7">
+</picture>
+</div>
+<div class="vis-2 pos-20 size-15 cont">
+<p class="para-4"><span class="font-3">Figure 4: The decomposition results using our Decom-Net and LIME on Bookshelf in LOL dataset. In our results, the reflectance of the low-light image resembles the reflectance of the normal-light image except for the amplified noise in dark regions occurred in real scenes.</span></p>
+</div>
+<div class="vis-2 pos-14 size-11 cont-12">
+<p class="para-4"><span class="font-3">See </span><span class="font-4"><a href="http://www.icst.pku.edu.cn/F/course/icb/Pub%20Files/2018/chen_bmvc18_sup.pdf">supplementary</a></span><span class="font-3"> for more results.</span></p>
+</div>
+<div class="vis-2 pos-14 size-16 cont-13">
+<p class="para-5"><span class="font-6">Download Links</span><span class="font-3">&nbsp;</span></p>
+<ul class="pos-21">
+<li class="para-6"><span class="font-7">&bull; </span><span class="font-7">Datasets</span></li>
+</ul>
+<p class="para-4"><span class="font-3">&nbsp;&nbsp;&nbsp;&nbsp;LOw Light paired dataset (LOL): </span><span class="font-4"><a href="https://drive.google.com/open?id=18dudQfe9uEOrfs9jA3jnbZPUgBsRSV9C">Google Drive</a></span><span class="font-3">, </span><span class="font-4"><a href="https://pan.baidu.com/s/1LAJJ7BiVKjpaZ4-sM08dxw">Baidu Pan</a></span></p>
+<p class="para-4"><span class="font-3">&nbsp;&nbsp;&nbsp;&nbsp;Synthetic Image Pairs from Raw Images: </span><span class="font-4"><a href="https://drive.google.com/open?id=1G6fi9Kiu7CDnW2Sh7UQ5ikvScRv8Q14F">Google Drive</a></span><span class="font-3">, </span><span class="font-4"><a href="https://pan.baidu.com/s/1drsMAkRMlwd9vObAM_9Iog">Baidu Pan</a></span></p>
+<p class="para-4"><span class="font-3">&nbsp;&nbsp;&nbsp;&nbsp;Testing Images: </span><span class="font-4"><a href="https://drive.google.com/open?id=1OvHuzPBZRBMDWV5AKI-TtIxPCYY8EW70">Google Drive</a></span><span class="font-3">, </span><span class="font-4"><a href="https://pan.baidu.com/s/1G2qg3oS12MmP8_dFlVRRug">Baidu Pan</a></span></p>
+<ul class="pos-21">
+<li class="para-6"><span class="font-7">&bull; </span><span class="font-7">Codes</span></li>
+</ul>
+<p class="para-4"><span class="font-3">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font-4"><a href="https://github.com/weichen582/RetinexNet">Github</a></span></p>
+<p class="para-4"><span class="font-3">&nbsp;</span></p>
+<p class="para-5"><span class="font-6">Citation</span></p>
+<p class="para-7"><span class="font-3">@inproceedings{Chen2018Retinex,</span></p>
+<p class="para-7"><span class="font-3">&nbsp;&nbsp;title={Deep Retinex Decomposition for Low-Light Enhancement},</span></p>
+<p class="para-7"><span class="font-3">&nbsp;&nbsp;author={Chen Wei, Wenjing Wang, Wenhan Yang, Jiaying Liu},</span></p>
+<p class="para-7"><span class="font-3">&nbsp;&nbsp;booktitle={British Machine Vision Conference},</span></p>
+<p class="para-7"><span class="font-3">&nbsp;&nbsp;year={2018},</span></p>
+<p class="para-7"><span class="font-3">}</span><span class="font-3">&nbsp;</span></p>
+<p class="para-4"><span class="font-3">&nbsp;</span></p>
+<p class="para-5"><span class="font-6">Reference</span></p>
+<p class="para-4"><span class="font-3">[1] Xuan Dong, Guan Wang, Yi Pang, Weixin Li, Jiangtao Wen, Wei Meng, and Yao Lu. Fast efficient algorithm for enhancement of low lighting video. In IEEE International Conference on Multimedia and Expo, pages 1&ndash;6, 2011.</span></p>
+<p class="para-4"><span class="font-3">[2] Shuhang Wang, Jin Zheng, Hai Miao Hu, and Bo Li. Naturalness preserved enhance- ment algorithm for non-uniform illumination images. IEEE Transactions on Image Processing, 22(9):3538&ndash;48, 2013.</span></p>
+<p class="para-4"><span class="font-3">[3] XueyangFu, DeluZeng, YueHuang, XiaoPingZhang, and XinghaoDing. Aweighted variational model for simultaneous reflectance and illumination estimation. In Computer Vision and Pattern Recognition, pages 2782&ndash;2790, 2016.</span></p>
+<p class="para-4"><span class="font-3">[4] Xiaojie Guo, Yu Li, and Haibin Ling. Lime: Low-light image enhancement via illumination map estimation. IEEE Transactions on Image Processing, 26(2):982&ndash;993, 2017.</span></p>
+<p class="para-4"><span class="font-3">[5] Keda. Ma, Kai. Zeng, and Zhou. Wang. Perceptual quality assessment for multi-exposure image fusion. IEEE Transactions on Image Processing, 24(11):3345, 2015.</span><span class="font-3">&nbsp;</span></p>
+<p class="para-4"><span class="font-3">[6] Xutong Ren, Mading Li, Wen-Huang Cheng, and Jiaying Liu. Joint enhancement and denoising method via sequential decomposition. In Circuits and Systems (ISCAS), 2018 IEEE International Symposium on, pages 1&ndash;5. IEEE, 2018.</span></p>
+</div>
+</div>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/index.20180920212709.js"></script>
+<script type="text/javascript">
+var ver=RegExp(/Mozilla\/5\.0 \(Linux; .; Android ([\d.]+)/).exec(navigator.userAgent);if(ver&&parseFloat(ver[1])<5){document.getElementsByTagName('body')[0].className+=' whitespacefix';}
+</script>
+</body>
+</html>
